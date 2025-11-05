@@ -6,10 +6,6 @@ La variable cible est silica_concentrate (dernière colonne du dataset).
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import os
-import sys
-
-# Ajouter le répertoire racine au path pour les imports
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 def split_data():
     """
@@ -19,11 +15,11 @@ def split_data():
     # Définir les chemins
     project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     raw_data_path = os.path.join(project_root, 'data', 'raw_data', 'raw.csv')
-    processed_dir = os.path.join(project_root, 'data', 'processed')
+    processed_dir = os.path.join(project_root, 'data', 'processed_data')
     
-    # Créer le répertoire processed s'il n'existe pas
+    # Créer le répertoire processed_data s'il n'existe pas
     os.makedirs(processed_dir, exist_ok=True)
-    
+ 
     # Charger les données
     print(f"Chargement des données depuis {raw_data_path}...")
     df = pd.read_csv(raw_data_path)

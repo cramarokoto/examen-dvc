@@ -1,0 +1,8 @@
+stages:
+  prepare:
+    cmd: python src/data/split.py
+    deps:
+    - data/raw_data
+    - src/data/split.py
+    outs:
+    - data/processed_data
