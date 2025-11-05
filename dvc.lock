@@ -57,3 +57,23 @@ stages:
       hash: md5
       md5: f45a9cbfe65222e504ee8508d01f142e
       size: 1175
+  gridsearch:
+    cmd: python src/models/gridsearch.py
+    deps:
+    - path: data/processed_data/X_train_scaled.csv
+      hash: md5
+      md5: 2ae9ad49829e68d0be841d195f490fc0
+      size: 256562
+    - path: data/processed_data/y_train.csv
+      hash: md5
+      md5: a9cd9d91da89f732843d72548f64ded3
+      size: 25951
+    - path: src/models/gridsearch.py
+      hash: md5
+      md5: 79eff3a7756210b65944bce05bc8507a
+      size: 8980
+    outs:
+    - path: models/best_params.pkl
+      hash: md5
+      md5: dd32e4edcf2c46ae136064208fda0fb4
+      size: 264
